@@ -521,3 +521,77 @@ function writeYourGenres() {
 }
 
 writeYourGenres(); */
+
+
+function calculateVolumeAndArea(length) {
+    if (typeof(length) !== 'number' || length < 0 || !Number.isInteger(length)) {
+        return "При вычислении произошла ошибка";
+    }
+
+    let volume = 0,
+        area = 0;
+    
+    volume = length * length * length;
+    // length ** 3 - это тоже самое, что и выше или варианты через цикл.
+    // ** - это оператор степени, напоминаю. Но онлайн редактор его не принимает =/
+    area = 6 * (length * length);
+
+    return `Объем куба: ${volume}, площадь всей поверхности: ${area}`;
+}
+
+calculateVolumeAndArea(5);
+
+function calculateVolumeAndArea(length) {
+    if (typeof(length) !== 'number' || length < 0 || !Number.isInteger(length) ) {
+        return "При вычислении произошла ошибка";
+    }
+    
+    let volume = 0,
+        area = 0;
+        
+    volume = length*length*length;
+    area = 6*(length*length);
+    
+    return `Обьем куба ${volume} , площадь всей поверхности ${area}`;
+
+}
+
+calculateVolumeAndArea(5);
+
+
+/* function getCoupeNumber(seatNumber) {
+    if (typeof(seatNumber) !== 'number' || seatNumber < 0 || !Number.isInteger(seatNumber)) {
+        return "Ошибка. Проверьте правильность введенного номера места";
+    }
+
+    if (seatNumber === 0 || seatNumber > 36) {
+        return "Таких мест в вагоне не существует";
+    }
+
+    for (let i = 4; i <= 36; i = i + 4) {
+        if (seatNumber <= i) {
+            return Math.ceil(i / 4);
+        }
+    }
+    // тут очень много вариантов решения, но выбрал один из элегантных :)
+} */
+
+function getCoupeNumber(placeNumber) {
+    if (typeof(placeNumber) !=='number' || !Number.isInteger(placeNumber) || placeNumber <0){
+        return "Ошибка. Проверьте правильность введенного номера места";
+        
+    } 
+    if (placeNumber === 0 || placeNumber >36) {
+        return "Таких мест в вагоне не существует";
+    }
+    
+    for (let i = 4; i <= 36; i = i + 4) {
+        if (placeNumber <= i) {
+            return Math.ceil(i / 4);
+        }}
+    
+}
+getCoupeNumber(8);
+
+
+Math.ceil

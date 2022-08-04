@@ -1,13 +1,7 @@
 
 
 
-function getCoupeNumber(placeNumber) {
-for (let i = 1; i <= 36; i*4) {
-    if (placeNumber <= i) {
-        return Math.ceil(i / 4);
-    }}
-}
-getCoupeNumber(6);
+
 
 function getTimeFromMinutes(minutesTotal) {
     if (typeof(minutesTotal) !== 'number' || minutesTotal < 0 || !Number.isInteger(minutesTotal)) {
@@ -37,8 +31,7 @@ function getTimeFromMinutes(minutesTotal) {
 
     return `Это ${hours} ${hoursStr} и ${minutes} минут`;
 }
-
-getTimeFromMinutes(180)
+getTimeFromMinutes(180);
 
 function countSheeps(arrayOfSheep) {
     var num = 0;
@@ -48,4 +41,39 @@ function countSheeps(arrayOfSheep) {
         num++;
         
     return num;
+  }
+
+
+  function findNeedle(haystack) {
+    return `found the needle at position ${haystack.indexOf('needle')}`;
+  }
+
+  function removeChar(str){
+    let str2 = str.slice(0, -1);
+    console.log(str2);
+   
+  }
+console.logremoveChar();
+
+
+function areYouPlayingBanjo(name) {
+
+    
+    if (name.slice(1) == 'R' || name.slice(1) == 'r') {
+      return `${name} plays banjo`;
+    }
+    return `${name} does not play banjo`;
+  }
+  console.log(areYouPlayingBanjo(Adam));
+
+  function fakeBin(x){
+    let res = '';
+    for(let i = 0; i < x.length; i++){
+      if(x[i] < 5){
+        res += 0;
+      } else {
+        res += 1;
+      }
+    }
+    return res
   }
