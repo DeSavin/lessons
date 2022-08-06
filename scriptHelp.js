@@ -105,3 +105,108 @@ function duplicateCount(text){
 function getCount(str) {
     return (str.match(/[aeiou]/ig)||[]).length;
   }
+
+  //функция дублирует каждую букву в строке  ( abc = aabbcc), $&$& - 2 раза повторяется буква
+
+  function doubleChar(str) {
+    return str.replace(/./g, '$&$&');
+    }
+
+// функция добавляет в массив номерное знаение каждого элемента массива + ": "   (["a", "b", "c"] --> ["1: a", "2: b", "3: c"])
+    var number = function(array) {
+        return array.map(function (line, index) {
+         return (index + 1) + ": " + line;
+        });
+    }
+
+// функция считает число положительных чисел в массиве и сумму отрицательных и выводит в массив
+// ( [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15], return [10, -65] )
+
+function countPositivesSumNegatives(input) {
+    if (input == null || input.length == 0)
+      return [];
+    
+    var positive = 0;
+    var negative = 0;
+    
+    for (var i=0, l=input.length; i<l; i++)
+    {
+      if (input[i] > 0)
+        positive ++;
+      else
+        negative += input[i];
+    }
+    
+    return [positive, negative];
+}
+    
+// функция перемножает все элементы массива имежду собой
+// ( [1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24 )
+
+function grow(x){
+    return x.reduce((previousValue, currentValue) => (previousValue * currentValue));
+    }
+
+// функция умножает все элементы массива на 2
+
+function maps(x){
+    let y = x.map((num) => (num * 2 ));
+  return y;
+  }
+
+  // функция выводит число, полученное при сложении всех элементов массива, возведеных в квадрат
+// for [1, 2, 2] it should return 9 because 1^2 + 2^2 + 2^2 = 9.
+
+  function squareSum(numbers){
+    if (numbers.length == 0){
+      return 0;
+    }
+    let sum = numbers.map((num) =>( num*num));
+  return sum.reduce ((val1, val2) => (val1+val2));
+  }
+
+//сравнение первой и последней буквы в строке у двух аргументов
+// "chickadee", "chocolate cake"), true)
+
+
+function feast(beast, dish) {
+	return beast[0] === dish[0] && beast[beast.length - 1] === dish[dish.length - 1]
+}
+
+// вывести в массив все числа кроме строк
+//  filter_list([1,2,'a','b']) == [1,2]
+
+function filter_list(l) {
+    return l.filter(function(v) {return typeof v == 'number'})
+  }
+
+// сортировка слов в строке по возрастанию чисел 
+//  "is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+
+
+function order(words){
+  
+    return words.split(' ').sort(function(a, b){
+        return a.match(/\d/) - b.match(/\d/);
+     }).join(' ');
+  }
+
+// функция выводит строчное значение с массива и меняет [,]  на пробел между словами
+// ['hello', 'world', 'this', 'is', 'great']  =>  'hello world this is great'
+
+function smash (words) {
+    return words.toString().split("").join("").replace(/[,]/gi, ' ');
+ };
+
+ ИЛИ
+
+ function smash (words) {
+    return words.join(" ");
+ };
+
+ // функция берет число из строки с текстом 
+// ("4 years old"), =>  4);
+
+ function getAge(inputString){
+    return parseInt(inputString);
+  }
