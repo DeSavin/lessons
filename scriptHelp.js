@@ -210,3 +210,39 @@ function smash (words) {
  function getAge(inputString){
     return parseInt(inputString);
   }
+
+  //функция выдает разницу между умножением 2х массивов
+ // [3, 2, 5], [1, 4, 4]) =>  14);
+
+  function findDifference(a, b) {
+
+    return Math.abs (a.reduce((num, pos)=>num*pos) - b.reduce((num, pos)=>num*pos)) 
+  }
+
+  // функция переворачивает все буквы в словах  в строке, а слова оставляет в том же порядке
+// "This is an example!" ==> "sihT si na !elpmaxe"
+
+  function reverseWords(str) {
+    return str.split(" ").map (
+      function(a){
+         return a.split("").reverse().join("");
+       }).join(" ");
+  }
+
+  // функция выводит остаток от  массива, тот что не совпадает с 2м массивом
+ // arrayDiff([1,2,2,2,3],[2]) == [1,3]
+
+  function array_diff(a, b) {
+    return a.filter(item => !b.includes(item));
+  }
+
+  // вырезает средние 2 буквы из строки, если кол-во букв в слове четное, и 1 букву по середине если нечетное
+  //  ("test") => "es");    ("testing") => "t")
+
+  function getMiddle(s){
+  if ( s.length % 2 == 0){
+    return s.substring ((s.length /2)-1 , (s.length /2) +1);
+    } else if ( ( s.length % 2 == 1) ) {
+        return s.substring ((s.length /2)+1 , (s.length /2));
+     };
+}
