@@ -77,3 +77,16 @@ function areYouPlayingBanjo(name) {
     }
     return res
   }
+
+
+  const options = {
+    name: 'Dimon',
+    width: 1000,
+    hight: 1000,
+    colors: {
+        border: 'black',
+        bg: 'red'
+    }
+  };
+
+  console.log(Object.keys(options).length);

@@ -246,3 +246,19 @@ function smash (words) {
         return s.substring ((s.length /2)+1 , (s.length /2));
      };
 }
+
+// выдает счетчик букв, которые идут после (a-m) и общую длинну строки
+// s="aaaxbbbbyyhwawiwjjjwwm" => printer_error(s) => "8/22"
+
+
+function printerError(s) {
+  return `${s.replace(/[a-m]/g, "").length}/${s.length}`
+  
+}
+
+// нужно возвести все цифпы в строке в квадрат и вывести значение в строку
+// (squareDigits(2112), =>>  4114);
+
+function squareDigits(num){
+  return +num.toString().split('').map(i => i*i).join('');
+}
