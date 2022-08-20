@@ -262,3 +262,32 @@ function printerError(s) {
 function squareDigits(num){
   return +num.toString().split('').map(i => i*i).join('');
 }
+
+// замена нескольких символов в строке на другие
+
+correct = s => s.replace(/0/g,'O').replace(/1/g,'I').replace(/5/g,'S')
+
+// сравнивает значения элементов массива с числом, если они меньше числа то вернет true
+// [66, 101],  200),  =>>  true);
+
+function smallEnough(a, limit){
+  return a.every(x => x <= limit);
+}
+
+// вычисления факториала с помощью рекурсии
+//  если в функцию приходит дробное число или не число  - возвращается 'ошибка'
+
+function factorial(n) {
+    if( typeof (n) !== 'number' || !Number.isInteger(n)){
+      return "Ошибка";
+    } else if (n <= 0) {
+      return 1;
+    }
+
+    if ( n>=1){
+      return n * factorial ( n -1);
+    } else { 
+      return 1;
+    }
+  }
+    factorial (5);
