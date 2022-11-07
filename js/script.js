@@ -447,6 +447,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // dfdfdf
     
 
     /* showSlides(sliderIndex);
